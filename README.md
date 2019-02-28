@@ -23,7 +23,3 @@ Test project for company on yii2.
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
-asas
->>>>>>> 2d8ba84ac0668c2e28e544ee89f970339df0d186
-=======
->>>>>>> a4eb3bbe9926b57624b9bcacaee3d975c2bca8c6
