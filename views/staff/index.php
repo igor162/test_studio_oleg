@@ -122,6 +122,27 @@ Modal::end();
                 'class' => 'yii\grid\ActionColumn',
                 'options' => ['width' => '5%'],
                 'template' => '{update} {delete}',
+                'buttons' => [
+                    'update' => function($model, $key, $index) {
+                        return Html::a(
+                            '<span class="glyphicon glyphicon-pencil">',
+                            '#',
+                            [
+                                'title' => 'View Feed Comments',
+                                'value' => Url::toRoute(['update', 'id' => $index, 'returnUrl' => Helper::getReturnUrl(), 'form' => \app\models\Staff::FORM_TYPE_AJAX]),
+                                'onclick' =>
+                                    '   $("#modal-staff").modal("show")
+                                        .find(".modal-header h4").text("' . \Yii::t('app', 'Adding data of «{attribute}»', ['attribute' => Yii::t('app', 'Staff data')]) . '")
+                                        .end()
+                                        .find(".modal-dialog").removeClass().addClass("modal-dialog modal-lg")
+                                        .end()
+                                        .find("#modalContent-staff")
+                                        .load($(this).attr("value"));
+                                            ',
+                                ]
+                        );
+                    }
+                ]
             ],
                 ],
     ]); ?>
